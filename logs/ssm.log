@@ -1304,3 +1304,9 @@ Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No q
 [INFO] [2016-04-03 18:02:03][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
 [INFO] [2016-04-03 18:02:04][com.ambition.passing.test.TestMyBatis]{"age":25,"id":2,"password":"123456","userName":"测试"}
 [INFO] [2016-04-03 18:02:04][org.springframework.context.support.GenericApplicationContext]Closing org.springframework.context.support.GenericApplicationContext@5d0a70af: startup date [Sun Apr 03 18:02:03 CST 2016]; root of context hierarchy
+[INFO] [2016-04-06 16:29:23][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring.xml]
+[INFO] [2016-04-06 16:29:24][org.springframework.context.support.GenericApplicationContext]Refreshing org.springframework.context.support.GenericApplicationContext@5d0a70af: startup date [Wed Apr 06 16:29:24 CST 2016]; root of context hierarchy
+[INFO] [2016-04-06 16:29:24][org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]Loading properties file from class path resource [jdbc.properties]
+[INFO] [2016-04-06 16:29:24][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[INFO] [2016-04-06 16:29:25][com.ambition.passing.test.TestMyBatis]{"age":25,"id":2,"password":"123456","userName":"测试"}
+[INFO] [2016-04-06 16:29:25][org.springframework.context.support.GenericApplicationContext]Closing org.springframework.context.support.GenericApplicationContext@5d0a70af: startup date [Wed Apr 06 16:29:24 CST 2016]; root of context hierarchy

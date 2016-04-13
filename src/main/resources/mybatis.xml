@@ -14,7 +14,7 @@
 		<typeAlias alias="User" type="com.ambition.passing.pojo.User" />
 	</typeAliases>
 	<mappers>
-		<mapper resource="mybatis/userMapper.xml" />
+		<mapper resource="mappers/userMapper.xml" />
 	</mappers>
 
 </configuration>
