@@ -11,10 +11,10 @@
 
 	<!-- 别名配置 -->
 	<typeAliases>
-		<typeAlias alias="User" type="com.ambition.passing.pojo.User" />
+		<typeAlias alias="User" type="com.ambition.passing.bean.User" />
 	</typeAliases>
 	<mappers>
-		<mapper resource="mappers/userMapper.xml" />
+		<mapper resource="mappers/UserMapper.xml" />
 	</mappers>
 
 </configuration>

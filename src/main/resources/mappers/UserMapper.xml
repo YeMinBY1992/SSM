@@ -10,80 +10,10 @@
 	<sql id="Base_Column_List">
 		id, user_name, password, age
 	</sql>
-	<select id="selectByPrimaryKey" resultMap="UserMap"
-		parameterType="java.lang.Integer">
+	<select id="getUserById" resultMap="UserMap" parameterType="java.lang.Integer">
 		select
 		<include refid="Base_Column_List" />
 		from user_t
 		where id = #{id,jdbcType=INTEGER}
 	</select>
-	<delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
-		delete from user_t
-		where id = #{id,jdbcType=INTEGER}
-	</delete>
-	<insert id="insert" parameterType="User">
-		insert into user_t (id,
-		user_name, password,
-		age)
-		values (#{id,jdbcType=INTEGER},
-		#{userName,jdbcType=VARCHAR},
-		#{password,jdbcType=VARCHAR},
-		#{age,jdbcType=INTEGER})
-	</insert>
-	<insert id="insertSelective" parameterType="User">
-		insert into user_t
-		<trim prefix="(" suffix=")" suffixOverrides=",">
-			<if test="id != null">
-				id,
-			</if>
-			<if test="userName != null">
-				user_name,
-			</if>
-			<if test="password != null">
-				password,
-			</if>
-			<if test="age != null">
-				age,
-			</if>
-		</trim>
-		<trim prefix="values (" suffix=")" suffixOverrides=",">
-			<if test="id != null">
-				#{id,jdbcType=INTEGER},
-			</if>
-			<if test="userName != null">
-				#{userName,jdbcType=VARCHAR},
-			</if>
-			<if test="password != null">
-				#{password,jdbcType=VARCHAR},
-			</if>
-			<if test="age != null">
-				#{age,jdbcType=INTEGER},
-			</if>
-		</trim>
-	</insert>
-	<update id="updateByPrimaryKeySelective" parameterType="User">
-		update user_t
-		<set>
-			<if test="userName != null">
-				user_name = #{userName,jdbcType=VARCHAR},
-			</if>
-			<if test="password != null">
-				password = #{password,jdbcType=VARCHAR},
-			</if>
-			<if test="age != null">
-				age = #{age,jdbcType=INTEGER},
-			</if>
-		</set>
-		where id = #{id,jdbcType=INTEGER}
-	</update>
-	<update id="updateByPrimaryKey" parameterType="User">
-		update user_t
-		set
-		user_name = #{userName,jdbcType=VARCHAR},
-		password =
-		#{password,jdbcType=VARCHAR},
-		age = #{age,jdbcType=INTEGER}
-		where id =
-		#{id,jdbcType=INTEGER}
-	</update>
 </mapper>

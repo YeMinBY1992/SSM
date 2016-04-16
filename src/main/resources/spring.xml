@@ -14,7 +14,7 @@
 	<!-- 引入配置文件 -->
 	<bean id="propertyConfigurer"
 		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
-		<property name="location" value="classpath:jdbc.properties" />
+		<property name="location" value="classpath:config/jdbc.properties" />
 	</bean>
 
 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
@@ -41,12 +41,14 @@
 		<!-- 自动扫描mapper.xml文件 -->
 		<property name="configLocation" value="classpath:mybatis.xml"></property>
 	</bean>
-
-	<!-- DAO接口所在包名，Spring会自动查找其下的类 -->
-	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-		<property name="basePackage" value="com.ambition.passing.dao" />
-		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"></property>
+	<!-- SqlSession -->
+	<bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
+		<constructor-arg index="0" ref="sqlSessionFactory" />
 	</bean>
+
+	<!-- DAO接口所在包名，Spring会自动查找其下的类 <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer"> 
+		<property name="basePackage" value="com.ambition.passing.dao" /> <property 
+		name="sqlSessionFactoryBeanName" value="sqlSessionFactory"></property> </bean> -->
 
 	<!-- (事务管理)transaction manager, use JtaTransactionManager for global tx -->
 	<bean id="transactionManager"

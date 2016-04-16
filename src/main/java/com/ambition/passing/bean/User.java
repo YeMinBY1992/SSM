@@ -1,12 +1,9 @@
-package com.ambition.passing.pojo;
+package com.ambition.passing.bean;
 
 public class User {
 	private Integer id;
-
 	private String userName;
-
 	private String password;
-
 	private Integer age;
 
 	public Integer getId() {
@@ -22,7 +19,7 @@ public class User {
 	}
 
 	public void setUserName(String userName) {
-		this.userName = userName == null ? null : userName.trim();
+		this.userName = userName;
 	}
 
 	public String getPassword() {
@@ -30,7 +27,7 @@ public class User {
 	}
 
 	public void setPassword(String password) {
-		this.password = password == null ? null : password.trim();
+		this.password = password;
 	}
 
 	public Integer getAge() {
