@@ -5,6 +5,6 @@
 <title>测试</title>
 </head>
 
-<body>${user.userName}
+<body>${response.object.name}
 </body>
 </html>

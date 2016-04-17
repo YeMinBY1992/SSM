@@ -2,18 +2,63 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.ambition.passing.dao.IUserDao">
 	<resultMap id="UserMap" type="User">
-		<id column="id" property="id" jdbcType="INTEGER" />
-		<result column="user_name" property="userName" jdbcType="VARCHAR" />
-		<result column="password" property="password" jdbcType="VARCHAR" />
-		<result column="age" property="age" jdbcType="INTEGER" />
+		<id column="FN_ID" property="id" />
+		<result column="FS_LOGINNAME" property="loginName" />
+		<result column="FS_PWD" property="password" />
+		<result column="FS_NAME" property="name" />
+		<result column="FN_AGE" property="age" />
+		<result column="FN_GRADE" property="grade" />
+		<result column="FN_GENDER" property="gender" />
+		<result column="FS_EMAIL" property="email" />
+		<result column="FS_CONTACTNUM" property="contactNum" />
+		<result column="FN_STATUS" property="status" />
+		<result column="FDT_CREATETIME" property="createTime" />
 	</resultMap>
-	<sql id="Base_Column_List">
-		id, user_name, password, age
-	</sql>
+
 	<select id="getUserById" resultMap="UserMap" parameterType="java.lang.Integer">
-		select
-		<include refid="Base_Column_List" />
-		from user_t
-		where id = #{id,jdbcType=INTEGER}
+		select * from tb_user where FN_ID = #{id}
 	</select>
+	<insert id="addUser" parameterType="User">
+		insert into
+		tb_user(FS_LOGINNAME,FS_PWD,FS_NAME,FN_AGE,FN_GRADE,FN_GENDER,FS_EMAIL,FS_CONTACTNUM,FN_STATUS,FDT_CREATETIME)
+		values(#{loginName},#{password},#{name},#{age},#{grade},#{gender},#{email},#{contactNum},#{status},#{createTime})
+	</insert>
+	<delete id="deleteUserById" parameterType="java.lang.Integer">
+		delete from tb_user
+		where FN_ID=#{id}
+	</delete>
+	<update id="updateUserById" parameterType="User">
+		update tb_user set
+		<if test="loginName != null and loginName != ''">
+			FS_LOGINNAME = #{loginName},
+		</if>
+		<if test="password != null and password != ''">
+			FS_PWD = #{password},
+		</if>
+		<if test="name != null and name != ''">
+			FS_NAME = #{name},
+		</if>
+		<if test="age != null and age != ''">
+			FN_AGE = #{age},
+		</if>
+		<if test="grade != null and grade != ''">
+			FN_GRADE = #{grade},
+		</if>
+		<if test="gender != null and gender != ''">
+			FN_GENDER = #{gender},
+		</if>
+		<if test="email != null and email != ''">
+			FS_EMAIL = #{email},
+		</if>
+		<if test="contactNum != null and contactNum != ''">
+			FS_CONTACTNUM = #{contactNum},
+		</if>
+		<if test="status != null and status != ''">
+			FN_STATUS = #{status},
+		</if>
+		<if test="createTime != null and createTime != ''">
+			FDT_CREATETIME = #{createTime}
+		</if>
+		where FN_ID=#{id}
+	</update>
 </mapper>
