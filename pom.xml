@@ -14,6 +14,8 @@
 		<druid.version>1.0.5</druid.version>
 		<mysql.version>5.1.30</mysql.version>
 		<jstl.version>1.2</jstl.version>
+		<aspectj.version>1.6.12</aspectj.version>
+		<shiro.version>1.2.3</shiro.version>
 	</properties>
 
 	<dependencies>
@@ -100,15 +102,15 @@
 			<artifactId>mysql-connector-java</artifactId>
 			<version>${mysql.version}</version>
 		</dependency>
-		
+
 		<!-- JSTL标签类 -->
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>jstl</artifactId>
 			<version>${jstl.version}</version>
 		</dependency>
-		
-		
+
+
 		<!-- 日志文件管理包 -->
 		<!-- log start -->
 		<dependency>
@@ -138,8 +140,8 @@
 			<version>${slf4j.version}</version>
 		</dependency>
 		<!-- log end -->
-		
-		
+
+
 		<!-- 上传组件包 -->
 		<dependency>
 			<groupId>commons-fileupload</groupId>
@@ -156,13 +158,58 @@
 			<artifactId>commons-codec</artifactId>
 			<version>1.9</version>
 		</dependency>
-		
-		
+
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<version>3.8.1</version>
 			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>redis.clients</groupId>
+			<artifactId>jedis</artifactId>
+			<version>2.6.2</version>
+			<type>jar</type>
+			<scope>compile</scope>
+		</dependency>
+
+		<!-- aspectjweaver -->
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjweaver</artifactId>
+			<version>${aspectj.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjrt</artifactId>
+			<version>${aspectj.version}</version>
+		</dependency>
+		<!-- shiro -->
+		<dependency>
+			<groupId>org.apache.shiro</groupId>
+			<artifactId>shiro-spring</artifactId>
+			<version>${shiro.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.shiro</groupId>
+			<artifactId>shiro-ehcache</artifactId>
+			<version>${shiro.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.shiro</groupId>
+			<artifactId>shiro-core</artifactId>
+			<version>${shiro.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.shiro</groupId>
+			<artifactId>shiro-web</artifactId>
+			<version>${shiro.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.shiro</groupId>
+			<artifactId>shiro-quartz</artifactId>
+			<version>${shiro.version}</version>
 		</dependency>
 	</dependencies>
 
