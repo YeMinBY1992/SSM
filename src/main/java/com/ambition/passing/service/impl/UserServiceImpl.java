@@ -1,5 +1,7 @@
 package com.ambition.passing.service.impl;
 
+import java.util.Map;
+
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Service;
 import com.ambition.passing.bean.User;
@@ -52,6 +54,17 @@ public class UserServiceImpl extends BaseServiceImpl implements IUserService {
 			logger.error("UserLog:delete fail\n", e);
 		}
 		return result;
+	}
+
+	@Override
+	public User getUserByCondition(Map<String, Object> condition) {
+		User user = null;
+		try {
+			user = (User) this.getBaseDao().queryForObject("getUserByCondition", condition);
+		} catch (Exception e) {
+			logger.error("userLog:get fail\n", e);
+		}
+		return user;
 	}
 
 }

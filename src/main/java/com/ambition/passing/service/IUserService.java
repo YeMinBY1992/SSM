@@ -1,5 +1,7 @@
 package com.ambition.passing.service;
 
+import java.util.Map;
+
 import com.ambition.passing.bean.User;
 
 public interface IUserService {
@@ -11,4 +13,6 @@ public interface IUserService {
 	public int addUser(User user);
 
 	public int updateUserById(User user);
+
+	public User getUserByCondition(Map<String, Object> condition);
 }
