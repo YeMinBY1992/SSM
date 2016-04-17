@@ -1,3 +1,5 @@
 eclipse.preferences.version=1
+encoding//src/main/java/com/ambition/passing/util/JsonUtil.java=UTF-8
+encoding//src/main/java/com/ambition/passing/util/StringUtil.java=UTF-8
 encoding//src/main/resources/config/jdbc.properties=UTF-8
 encoding//src/test/java/com/ambition/passing/test/TestMyBatis.java=UTF-8
